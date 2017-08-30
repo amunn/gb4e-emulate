@@ -1,0 +1,64 @@
+% This file tests the emulation of gb4e using the gb4e-emulate package
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{gb4e-emulate}
+
+\setlist[exe,1]{leftmargin=*} %  Uncomment this line to have flush left examples
+\begin{document}
+\lipsum[1]
+\begin{exe}
+\ex\label{1}
+\begin{xlist}
+\ex[*]{ This is an example.}
+\begin{xlist}
+\ex[*]{This is a subexample}
+\ex[]{This is a another subexample.}
+\end{xlist}
+\ex This is an example.
+\ex{\gll Ceci est une example francaise.\\
+		This is an example french\\
+	\trans ``This is a french example.''}
+\sn{An unnumbered example}
+\end{xlist}
+\end{exe}
+
+\begin{exe}
+\ex\label{2}
+\begin{xlist}
+\ex[*]{ This is an example.}
+\begin{xlist}
+\ex[*]{This is a subexample}
+\ex[]{This is a another subexample.}
+\end{xlist}
+\ex This is an example.
+\ex{\gll Ceci est une example francaise.\\
+		This is an example french\\
+	\trans ``This is a french example.''}
+\end{xlist}
+\end{exe}
+
+\begin{exe}
+\ex\label{3}
+\begin{xlistI}
+\ex{A ROMAN list}
+\ex{Another one}
+\end{xlistI}
+\end{exe}
+
+\begin{exe}
+\ex\label{4}
+\begin{xlistA}
+\ex{An ALPHA list}
+\ex{Another one}
+\end{xlistA}
+\end{exe}
+
+\begin{exe}
+\ex[]{Another}
+\ex{Another}
+\label{5}
+\end{exe}
+
+This is a \ref{5} to an example.
+\lipsum[2]\footnote{As we can see in the following example:\begin{exe}[label=\roman*]\ex[*]{This is a fn example}\end{exe}}\lipsum[1]
+\end{document}
