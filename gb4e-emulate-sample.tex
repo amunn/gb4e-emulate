@@ -1,16 +1,18 @@
 % This file tests the emulation of gb4e using the gb4e-emulate package
 \documentclass{article}
 \usepackage{lipsum}
+%\usepackage{gb4e}
 \usepackage{gb4e-emulate}
 
-\setlist[exe,1]{leftmargin=*} %  Uncomment this line to have flush left examples
+\setlist[exe,1]{nosep} %  Uncomment this line to have flush left examples
+\setlist[xlist]{nosep}
 \begin{document}
 \lipsum[1]
 \begin{exe}
 \ex\label{1}
-\begin{xlist}
-\ex[*]{ This is an example.}
-\begin{xlist}
+\begin{xlist}[nosep]
+\ex[*]{ This is an example.}\label{foo}
+\begin{xlist}[nosep]
 \ex[*]{This is a subexample}
 \ex[]{This is a another subexample.}
 \end{xlist}
@@ -45,7 +47,7 @@
 \end{xlistI}
 \end{exe}
 
-\begin{exe}
+\begin{exe}[nosep]
 \ex\label{4}
 \begin{xlistA}
 \ex{An ALPHA list}
@@ -59,6 +61,7 @@
 \label{5}
 \end{exe}
 
-This is a \ref{5} to an example.
-\lipsum[2]\footnote{As we can see in the following example:\begin{exe}[label=\roman*]\ex[*]{This is a fn example}\end{exe}}\lipsum[1]
+This is a reference \ref{5} to an example.
+\lipsum[2]%\footnote{As we can see in the following example:\begin{exe}[label=\roman*]\ex[*]{This is a fn example}\end{exe}}\lipsum[1]
+\footnote{As we can see in the following example:\begin{exe}\ex[*]{This is a fn example}\end{exe}}
 \end{document}
